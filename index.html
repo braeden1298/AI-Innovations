@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Innovations</title>
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <!-- Login form -->
+    <div id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <!-- Admin panel -->
+    <div id="admin-panel" style="display: none;">
+        <h2>Admin Panel</h2>
+        <!-- Registration form for new non-admin users -->
+        <form id="registration-form">
+            <input type="text" id="new-username" placeholder="Username" required>
+            <input type="password" id="new-password" placeholder="Password" required>
+            <input type="submit" value="Register new user">
+        </form>
+        <button id="logout-button">Logout</button>
+    </div>
+    <!-- Header section -->
+<header>
+    <nav>
+        <!-- Logo placeholder -->
+        <div class="logo">
+            <img src="https://via.placeholder.com/100" alt="Logo" />
+        </div>
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+    <!-- Home section -->
+    <section id="home">
+        <h1>Welcome to AI Innovations!</h1>
+        <p>At AI Innovations, we harness the power of artificial intelligence to solve complex problems and bring about positive change. Our advanced AI solutions are designed to streamline operations, enhance decision making, and create new possibilities for a wide range of industries.</p>
+        <!-- Placeholder image -->
+        <img src="https://via.placeholder.com/600x400" alt="AI Innovations">
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Founded in 2020, AI Innovations has quickly established itself as a leader in the AI industry. Our expert team of data scientists, engineers, and strategists work tirelessly to develop AI technologies that drive efficiency, growth, and innovation. Our solutions are trusted by companies worldwide, from startups to Fortune 500 corporations.</p>
+        <!-- Placeholder image -->
+        <img src="https://via.placeholder.com/600x400" alt="About us">
+    </section>
+
+    <!-- Services section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <h3>AI Consulting</h3>
+                <p>Our experienced consultants will guide you on your AI journey, helping you identify opportunities and implement AI solutions that align with your business objectives.</p>
+                <!-- Placeholder image -->
+                <img src="https://via.placeholder.com/600x400" alt="AI Consulting">
+            </li>
+            <li>
+                <h3>Machine Learning Solutions</h3>
+                <p>We specialize in creating custom machine learning models that can analyze large datasets, recognize patterns, and make predictions. These models can be used to automate a wide range of tasks, from customer segmentation to predictive maintenance.</p>
+                <!-- Placeholder image -->
+                <img src="https://via.placeholder.com/600x400" alt="Machine Learning">
+            </li>
+            <li>
+                <h3>Data Analysis</h3>
+                <p>We provide comprehensive data analysis services to help businesses gain valuable insights from their data. Our team uses advanced AI algorithms to analyze data and uncover hidden trends, patterns, and correlations.</p>
+                <!-- Placeholder image -->
+                <img src="https://via.placeholder.com/600x400" alt="Data Analysis">
+            </li>
+        </ul>
+    </section>
+
+<!-- Contact section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Whether you have a question about our services, need assistance with an existing solution, or want to explore a potential partnership, our team is ready to help. Fill out the form below, and we'll get back to you as soon as possible.</p>
+<form action="https://formspree.io/f/xrgvjwol" method="POST">
+    <div class="input-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="_replyto" required>
+    </div>
+    <div class="input-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    <div class="input-group">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html" />
+        <input type="submit" value="Submit" class="submit-btn">
+    </div>
+</form>
+
+</section>
+
+
+    <!-- Footer section -->
+    <footer>
+        <p>© 2023 AI Innovations. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scrolling JavaScript -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+   <script src="main.js"></script>
+</body>
+</html>

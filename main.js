@@ -15,10 +15,10 @@ firebase.initializeApp(firebaseConfig);
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    firebase.auth().signInWithEmailAndPassword(username, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
         // User signed in
         var user = userCredential.user;
@@ -60,16 +60,16 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var newUsername = document.getElementById('new-username').value;
+    var newEmail = document.getElementById('new-email').value;
     var newPassword = document.getElementById('new-password').value;
 
-    firebase.auth().createUserWithEmailAndPassword(newUsername, newPassword)
+    firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
         .then((userCredential) => {
             // User created
             var user = userCredential.user;
             // Add the new user to Firestore as a non-admin
             firebase.firestore().collection('users').doc(user.uid).set({
-                username: newUsername,
+                email: newEmail,
                 isAdmin: false,
             })
             .then(() => {
